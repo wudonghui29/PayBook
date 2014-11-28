@@ -1,0 +1,303 @@
+{
+    
+    
+    "JCom": "JsonView",
+    "JFrame": [0, 0, 768, 1331.25],
+    "SORTEDKEYS": ["BG_BOTTOM_IMAGE", "BG_HeaderImage", "NESTED_header","NESTED_REMARK"],
+    "COMPONENTS" : {
+        
+        "BG_BOTTOM_IMAGE" : {
+            "JCom": "JRImageView",
+            "BORDER":27,
+            
+            "JFrame": [0,0],
+            "JSubRender":{
+                "JR_IMG": "账户资料1.png"
+            }
+        },
+        
+        "BG_HeaderImage" : {
+            "JCom": "JRImageView",
+            "JFrame": [0,0],
+            "JSubRender":{
+                "JR_IMG": "账户资料_01.png"
+            }
+        },
+        
+        "NESTED_header": {
+            "JFrame": [ 0,0, 1024, 80 ],
+            "COMPONENTS": {
+                
+                "BTN_Back" : {
+                    "JCom": "JRButton",
+                    "JFrame": [23,1.1,104,80],
+                    "JSubRender": {
+                        "JR_FGN_IMG":"账户资料_02.png", "JR_FGIMG_Insets":[22, 12, 2 , 15], "JR_TITLE_Insets": [0, 5, 2, 10]
+                    }
+                },
+                
+                
+                "BTN_Save" : {
+                    "JCom": "JRButton",
+                    "JFrame": [630,1.1,104,80],
+                    "JSubRender": {
+                        "JR_FGN_IMG":"账户资料_03.png", "JR_FGIMG_Insets":[10, 20, 2 , 15], "JR_TITLE_Insets": [-5, 5, 0, 0]
+                    }
+                }
+            }
+        },
+        
+    
+        
+        "keepingAccount": {
+            "JCom": "JRLocalizeLabel",
+            "JFrame": [265,20,-1.1,80],
+            "JSubRender": {
+                "RESERVE_CENTER": 1,
+                "FONT_SIZE":50
+            }
+        },
+
+        
+        "NESTED_REMARK" : {
+        
+            "JFrame": [0,105,760,1200],
+            "BORDER": 25,
+            "COMPONENTS" : {
+                
+                "NESTED_UP" : {
+                    "JFrame": [0,0,760,210],
+                    "BORDER":25,
+                    "SORTEDKEYS": ["BG_DATE_IMAGE",  "BG_PAYDETAIL_IMAGE", "BG_LINE_IMAGE"],
+                    "COMPONENTS" : {
+                        
+                        "BG_DATE_IMAGE" : {
+                            "JCom": "JRImageView",
+                            "JFrame": [0,0,-1.1,-1.1],
+                            "JSubRender":{
+                                "JR_IMG": "记账单_04.png"
+                            }
+                        },
+                        
+                        "BG_LINE_IMAGE":{
+                            "JCom": "JRImageView",
+                            "BORDER_": 25,
+                            
+                            "JFrame": [0,220,-1.1,-1.1],
+                            "JSubRender":{
+                                "JR_IMG": "记账单_06.png"
+                            }
+                            
+                            
+                        },
+                        
+                        "createDate": {
+                            "JCom" : "JRLabelTextFieldView",
+                            "JFrame": [0,0,680,75],
+                            "BORDER_": 1,
+                            "JSubRender": {
+                                "frames":[[60,10,-1.1,75], [230,0,500,95]],
+                                "SubRenders":[{"FONT_SIZE": 40},{"BORDER": 1}]
+                            }
+                        },
+                        
+                        "BG_PAYDETAIL_IMAGE":{
+                            "JCom": "JRImageView",
+                            "BORDER": 25,
+
+                            "JFrame": [0,95,-1.1,-1.1],
+                            "JSubRender":{
+                                "JR_IMG": "记账单_05.png"
+                            }
+                            
+                            
+                        },
+                        
+                        
+                        
+                        
+                        
+                        
+                        "balance":{
+                            "JCom" : "JRTextField",
+                            "JFrame": [30, 105, 200, 95],
+                            "JSubRender": {
+                                "JR_IMG":"记账单_01.png"
+                            }
+                        },
+                        
+                        "account":{
+                            "JCom" : "JRTextField",
+                            "JFrame": [240, 105, 200, 95],
+                            "JSubRender": {
+                                "JR_IMG":"记账单_01.png"
+                            }
+                        },
+                        
+
+                        
+                        "to": {
+                            "JCom": "JRLocalizeLabel",
+                            "JFrame": [450,105,60,80],
+                            "BORDER_": 1,
+                            "JSubRender": {
+                                "RESERVE_CENTER": 1,
+                                "FONT_SIZE":50
+                            }
+                        },
+
+
+                        "category":{
+                            "JCom" : "JRTextField",
+                            "JFrame": [525, 105, 200, 95],
+                            "JSubRender": {
+                                "JR_IMG":"记账单_01.png"
+                            }
+                        },
+                        
+                        
+
+                        
+
+                        
+
+
+
+
+                        
+                        
+                        
+                    }
+                },
+                
+                "NESTED_MIDDLE" : {
+                    "JFrame": [0,240,750,700],
+                    "BORDER_":19,
+                    "SORTEDKEYS": ["BG_PICTURE_IMAGE",  "BTN_Take","title_1","BG_IMAGE", "amount","title_O"],
+
+                    "COMPONENTS" : {
+                        
+                        "BG_PICTURE_IMAGE":{
+                            "JCom": "JRImageView",
+                            "BORDER_": 25,
+                            
+                            "JFrame": [0,0,-1.1,-1.1],
+                            "JSubRender":{
+                                "JR_IMG": "记账单_07.png"
+                            }
+                            
+                            
+                        },
+                        
+                        "BTN_Take" : {
+                            "JCom": "JRButton",
+                            "JFrame": [60,10,-1.1,-1.1],
+                            "JSubRender":{
+                                "JR_BGN_IMG": "记账单_02.png"
+                            }
+                        },
+                        
+                        "title_1":{
+                            "JCom" : "JRTextField",
+
+                            "JFrame": [230,20,320,80],
+                            "JSubRender": {
+                                "JR_BORDERSTYLE" : 0,
+                                "BGCOLOR":-1
+                            }
+                        },
+                        
+                        "BG_IMAGE":{
+                            "JCom": "JRImageView",
+                            "JFrame": [80,130,615,395],
+                            "JSubRender":{
+                                
+                            }
+                            
+                            
+                        },
+
+                        
+                        
+                        "amount": {
+                            "JCom": "JRLocalizeLabel",
+                            "JFrame": [80,540,200,80],
+                            "JSubRender": {
+                                "RESERVE_CENTER": 1,
+                                "FONT_SIZE":50
+                            }
+                        },
+                        "title_O":{
+                            "JCom" : "JRTextField",
+                            "JFrame": [300,540,300,80],
+                            "JSubRender": {
+                                "JR_BORDERSTYLE" : 0,
+                                "BGCOLOR":-1
+                            }
+                        },
+
+
+
+
+                        
+                        
+                        
+                    }
+                },
+                
+                
+                "NESTED_DOWN" : {
+                    "JFrame": [0,900,768,400],
+                    "BORDER_": 25,
+                    "SORTEDKEYS": ["BG_REMARK_IMAGE"],
+                    "COMPONENTS" : {
+                        
+                        "remark": {
+                            "JCom": "JRLocalizeLabel",
+                            "JFrame": [50,15,150,100],
+                            "BORDER_": 25,
+                            "JSubRender": {
+                                "RESERVE_CENTER": 1,
+                                "FONT_SIZE":50
+                            }
+                        },
+                        
+                        "remarkTextView":{
+                            "JCom":"JRTextView",
+                            "JFrame":[35,90,680,250],
+                            "BORDER_": 25,
+
+                            "JSubRender":{
+                                
+                            }
+                        },
+
+
+                        
+                        "BG_REMARK_IMAGE" : {
+                            "JCom": "JRImageView",
+                            "JFrame": [30,90,-1.1,-1.1],
+                            "JSubRender":{
+                                "JR_IMG":"记账单_3.png"
+                            }
+                        },
+
+                        
+                        
+                    
+                        
+                    }
+                }
+                
+                
+            }
+
+                   
+       
+        
+        }
+        
+}
+    
+    
+}

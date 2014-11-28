@@ -1,0 +1,195 @@
+{
+    
+    
+    "JCom": "JsonView",
+    "JFrame": [0, 0, 768, 1331.25],
+    "SORTEDKEYS": ["BG_BOTTOM_IMAGE", "BG_BOOK_IMAGE", "BG_HeaderImage", "NESTED_header", "NESTED_footer", "BTN_PriorPage", "BTN_NextPage" ],
+    "COMPONENTS" : {
+        
+        "BG_BOTTOM_IMAGE" : {
+            "JCom": "JRImageView",
+            "JFrame": [],
+            "JSubRender":{
+                "JR_IMG": "账户资料1.png"
+            }
+        },
+        
+        "BG_BOOK_IMAGE" : {
+            "JCom": "JRImageView",
+            "JFrame": [0,110,-1.1,-1.1],
+            "JSubRender":{
+                "JR_IMG": "账户资料_05.png"
+            }
+        },
+
+        
+        "BG_HeaderImage" : {
+            "JCom": "JRImageView",
+            "JFrame": [0,0],
+            "JSubRender":{
+                "JR_IMG": "账户资料_01.png"
+            }
+        },
+        
+        "accountInfo": {
+            "JCom": "JRLocalizeLabel",
+            "JFrame": [265,20,-1.1,80],
+            "JSubRender": {
+                "RESERVE_CENTER": 1,
+                "FONT_SIZE":50
+            }
+        },
+        
+        
+        
+        
+        "NESTED_header": {
+            "JFrame": [ 0,0, 1024, 80 ],
+            "COMPONENTS": {
+                
+                "BTN_Back" : {
+                    "JCom": "JRButton",
+                    "JFrame": [23,1.1,104,80],
+                    "JSubRender": {
+                        "JR_FGN_IMG":"账户资料_02.png", "JR_FGIMG_Insets":[22, 12, 2 , 15], "JR_TITLE_Insets": [0, 5, 2, 10]
+                    }
+                },
+                
+                
+                "BTN_Return" : {
+                    "JCom": "JRButton",
+                    "JFrame": [630,1.1,104,80],
+                    "JSubRender": {
+                        "JR_FGN_IMG":"账户资料_03.png", "JR_FGIMG_Insets":[10, 20, 2 , 15], "JR_TITLE_Insets": [-5, 5, 0, 0]
+                    }
+                }
+            }
+        },
+        
+        "NESTED_BODY" : {
+            "JFrame": [35,200,680,1050],
+            "BORDER_": 25,
+
+            "COMPONENTS" : {
+                
+                "NESTED_UP" : {
+                    "JFrame": [5,5,680,1050],
+                    "BORDER_": 28,
+
+                    "COMPONENTS" : {
+                        
+                        
+                        
+                        "accountName": {
+                            "JCom" : "JRLabelTextFieldView",
+                            "JFrame": [0,0,680,75],
+                            "BORDER_": 1,
+                            "JSubRender": {
+                                "frames":[[20,0,-1.1,75], [160,0,500,75]],
+                                "SubRenders":[{"FONT_SIZE": 30},{"JR_IMG":"账户资料_04.png"}]
+                            }
+                        },
+                        
+                        
+                        "accountTotal": {
+                            "JCom" : "JRLocalizeLabel",
+                            "BORDER_": 25,
+                            "JFrame": [250,160,250,50],
+                            "JSubRender": {
+                                "FONT_SIZE": 40
+                            }
+                        },
+                        
+                        
+                        "currency": {
+                            "JCom" : "JRLabelTextFieldView",
+                            "JFrame": [0,250,680,75],
+                            "BORDER_": 1,
+                            "JSubRender": {
+                                "frames":[[20,0,-1.1,75], [160,0,500,75]],
+                                "SubRenders":[{"FONT_SIZE": 30},{"JR_IMG":"账户资料_04.png"}]
+                            }
+                        },
+                        
+                        "amount": {
+                            "JCom" : "JRLabelTextFieldView",
+                            "JFrame": [0,360,680,75],
+                            "BORDER_": 1,
+                            "JSubRender": {
+                                "frames":[[20,0,-1.1,75], [160,0,500,75]],
+                                "SubRenders":[{"FONT_SIZE": 30},{"JR_IMG":"账户资料_04.png"}]
+                            }
+                        },
+                        
+                        
+                        "bankOrCreditcar": {
+                            "JCom" : "JRLocalizeLabel",
+                            "BORDER_": 25,
+                            "JFrame": [250,490,350,50],
+                            "JSubRender": {
+                                "FONT_SIZE": 40
+                            }
+                        },
+                        
+                        "bankName": {
+                            "JCom" : "JRLabelTextFieldView",
+                            "JFrame": [0,580,680,75],
+                            "BORDER_": 1,
+                            "JSubRender": {
+                                "frames":[[20,0,-1.1,75], [160,0,500,75]],
+                                "SubRenders":[{"FONT_SIZE": 30},{"JR_IMG":"账户资料_04.png"}]
+                            }
+                        },
+                        
+                        "branchOffice": {
+                            "JCom" : "JRLabelTextFieldView",
+                            "JFrame": [0,690,680,75],
+                            "BORDER_": 1,
+                            "JSubRender": {
+                                "frames":[[20,0,-1.1,75], [160,0,500,75]],
+                                "SubRenders":[{"FONT_SIZE": 30},{"JR_IMG":"账户资料_04.png"}]
+                            }
+                        },
+
+                        "bankAccountName": {
+                            "JCom" : "JRLabelTextFieldView",
+                            "JFrame": [0,800,680,75],
+                            "BORDER_": 1,
+                            "JSubRender": {
+                                "frames":[[20,0,-1.1,75], [160,0,500,75]],
+                                "SubRenders":[{"FONT_SIZE": 30},{"JR_IMG":"账户资料_04.png"}]
+                            }
+                        },
+                        
+                        "bankAccountNumber": {
+                            "JCom" : "JRLabelTextFieldView",
+                            "JFrame": [0,910,680,75],
+                            "BORDER_": 1,
+                            "JSubRender": {
+                                "frames":[[20,0,-1.1,75], [160,0,500,75]],
+                                "SubRenders":[{"FONT_SIZE": 30},{"JR_IMG":"账户资料_04.png"}]
+                            }
+                        },
+                        
+                        
+                        
+                        
+                        
+                    }
+                },
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            }
+        }
+        
+    }
+    
+    
+}
