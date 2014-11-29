@@ -1,6 +1,10 @@
 #import <Foundation/Foundation.h>
 
 
+
+#define DATA [DataManager getInstance]
+
+
 @class NSManagedObjectModel;
 @class NSManagedObjectContext;
 @class NSPersistentStoreCoordinator;
@@ -17,6 +21,11 @@
 @property (nonatomic, strong, readonly) NSPersistentStoreCoordinator* persistentStoreCoordinator;
 
 // core data end
+
+
+
+
++(DataManager*) getInstance;
 
 
 

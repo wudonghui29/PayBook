@@ -7,7 +7,7 @@
 //
 
 #import "FinanceKeepingAccountViewController.h"
-#import "JRComponents.h"
+#import "ClassesInterface.h"
 
 @interface FinanceKeepingAccountViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIActionSheetDelegate>
 {
@@ -63,8 +63,6 @@
     saveBTN.didClikcButtonAction = ^(JRButton *sender){
 
     };
-
-
 
 }
 

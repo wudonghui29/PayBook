@@ -12,6 +12,19 @@
 
 
 
++(DataManager*) getInstance
+{
+    static DataManager* manager = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        manager = [[DataManager alloc] init];
+    });
+    return manager;
+}
+
+
+
+
 #pragma mark - Core Data Intialize
 
 -(NSManagedObjectModel *)manageObjectModel
@@ -31,7 +44,12 @@
         NSError* error = nil;
         NSString* docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
         NSString* appPahtInDoc = [docPath stringByAppendingPathComponent: @"App"];
-        NSURL* storeURL = [NSURL fileURLWithPath: [appPahtInDoc stringByAppendingPathComponent: @"Models.sqlite"]];
+        NSString* modelsSqlitePath = [appPahtInDoc stringByAppendingPathComponent: @"Models.sqlite"];
+        
+        [FileManager createFolderWhileNotExist: modelsSqlitePath];
+        DLog(@"SQLITE : %@", modelsSqlitePath);
+        
+        NSURL* storeURL = [NSURL fileURLWithPath: modelsSqlitePath];
         if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
             NSLog(@"Error : %@ , %@", error, error.userInfo);
         }
