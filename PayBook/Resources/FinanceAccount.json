@@ -148,7 +148,7 @@
                         "bankOrCreditcar": {
                             "JCom" : "JRLocalizeLabel",
                             "BORDER_": 25,
-                            "JFrame": [250,490,350,50],
+                            "JFrame": [230,490,350,50],
                             "JSubRender": {
                                 "FONT_SIZE": 40
                             }
