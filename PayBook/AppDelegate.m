@@ -23,7 +23,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame: [UIScreen mainScreen].bounds];
-
+    NSLog(@"path:%@",[NSHomeDirectory() stringByAppendingPathComponent:@"/Documents"]);
     [FrameTranslater setCanvasSize: CGSizeMake(768, 1331.25)];
     [KeyBoardHelper sharedInstance].keyboardDistanceFromTextField = CanvasH(10);
     
