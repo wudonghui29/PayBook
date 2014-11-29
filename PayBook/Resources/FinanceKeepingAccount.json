@@ -2,7 +2,7 @@
     
     
     "JCom": "JsonView",
-    "JFrame": [0, 0, 768, 1331.25],
+    "JFrame": [0, 0, 750, 1331],
     "SORTEDKEYS": ["BG_BOTTOM_IMAGE", "BG_HeaderImage", "NESTED_header","NESTED_REMARK"],
     "COMPONENTS" : {
         

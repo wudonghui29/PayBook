@@ -70,13 +70,41 @@
         [FileManager createFolderWhileNotExist: imageSavedDirectory];
         
         NSDictionary* models = [jsonview getModel];
+        NSMutableDictionary* values = [DictionaryHelper deepCopy: models];
+        NSString* identification = [DateHelper stringFromDate:[NSDate date] pattern:@"yyyyMMddHHmmss"];
+        [values setObject: identification forKey:@"identification"];
         
-        [MODELS save: models entityName:@"FinanceKeepingAccount"];
+        // ..........................
+        if (values[@"createDate"]) {
+            NSString* dateString = values[@"createDate"];
+            NSDate* date = [DateHelper dateFromString: dateString pattern:PATTERN_DATE];
+            [values setObject: date forKey:@"createDate"];
+        }
         
-        NSString* imageFileName = @"aa.png";
-        NSString* imageFilePath = [imageSavedDirectory stringByAppendingPathComponent:imageFileName];
+        if (values[@"amount"]) {
+            NSString* amnout = values[@"amount"];
+            float tem = [amnout floatValue];
+            NSNumber* num = [NSNumber numberWithFloat: tem];
+            [values setObject:num forKey:@"amount"];
+        }
         
-        [FileManager writeDataToFile:imageFilePath data: imageData];
+        
+        if ([MODELS save: values entityName:@"FinanceKeepingAccount"]) {
+            
+            NSString* imageFileName = [NSString stringWithFormat:@"%@.png", identification];
+            NSString* imageFilePath = [imageSavedDirectory stringByAppendingPathComponent:imageFileName];
+            
+            [FileManager writeDataToFile:imageFilePath data: imageData];
+            
+            
+            
+        } else {
+            
+        }
+        
+        
+        
+        
     };
 
 }
@@ -97,9 +125,9 @@
 {
     if(buttonIndex == 1)
     {
-        if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+        if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
             [self takePhoto];
-        else{
+        } else{
             [self photos];
         }
     }
@@ -135,7 +163,6 @@
 {
     imamgeView.image = [editingInfo objectForKey:@"UIImagePickerControllerOriginalImage"];
     [self dismissViewControllerAnimated:YES completion:nil];
-    [self presentViewController:picker animated:YES completion:nil];
 
 }
 

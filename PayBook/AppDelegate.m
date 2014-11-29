@@ -24,7 +24,7 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame: [UIScreen mainScreen].bounds];
     NSLog(@"path:%@",[NSHomeDirectory() stringByAppendingPathComponent:@"/Documents"]);
-    [FrameTranslater setCanvasSize: CGSizeMake(768, 1331.25)];
+    [FrameTranslater setCanvasSize: CGSizeMake(750, 1331)];
     [KeyBoardHelper sharedInstance].keyboardDistanceFromTextField = CanvasH(10);
     
     
@@ -48,7 +48,7 @@
     
     mainController.wheelDidTapSwipLeftBlock = ^(WheelsController *baseController , NSInteger index){
 
-        WheelsController *secondController = [[WheelsController alloc] init];
+//        WheelsController *secondController = [[WheelsController alloc] init];
         secondController.wheels = @[LOCALIZE_KEY(@"cash"), LOCALIZE_KEY(@"account"),LOCALIZE_KEY(@"bankcard")];
         secondController.imageArray = wheelsImages;
         [secondController.imageArray addObject:@"Wheel_6"];
@@ -76,9 +76,9 @@
                         [[NSUserDefaults standardUserDefaults] synchronize];
                         
                         [CategoriesLocalizer setCurrentLanguage: languageSelected];
-                        secondController.wheels = @[LOCALIZE_KEY(@"languagesetting")];
-                        secondController.imageArray = @[@"a.png"];
-                        [secondController.carousel reloadData];
+                        blockSecondController.wheels = @[LOCALIZE_KEY(@"languagesetting")];
+                        blockSecondController.imageArray = [NSMutableArray arrayWithObjects:@"Wheel_1", nil];
+                        [blockSecondController.carousel reloadData];
                         
                     }
                 } buttonTitles: localizeLanguages];
@@ -114,7 +114,7 @@
         if(index == 0)
         {
             secondController.wheels =  @[LOCALIZE_KEY(@"cash")];
-            secondController.imageArray = @[@"Wheel_1"];
+            secondController.imageArray = [NSMutableArray arrayWithObjects:@"Wheel_1", nil];
             UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
             [btn setFrame:CGRectMake(260, 20, 20, 20)];
             [btn setBackgroundImage:[UIImage imageNamed:@"public_add"] forState:UIControlStateNormal];
@@ -138,7 +138,7 @@
         else if(index == 4)
         {
             secondController.wheels = @[LOCALIZE_KEY(@"languagesetting")];
-            secondController.imageArray = @[@"a.png"];
+            secondController.imageArray = [NSMutableArray arrayWithObjects:@"Wheel_1", nil];
             isLanguageSet = YES;
 
 
@@ -157,27 +157,6 @@
 {
     FinanceAccountOrderController *financeAccountController = [[FinanceAccountOrderController alloc] init];
     [nav pushViewController:financeAccountController animated:YES];
-}
-- (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-}
-
-- (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-}
-
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-}
-
-- (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
 @end
