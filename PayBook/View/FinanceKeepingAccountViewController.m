@@ -51,6 +51,9 @@
     JRTextView *title_1 = (JRTextView *)[jsonview getView:@"title_1"];
     [title_1 setFont:[UIFont fontWithName:@"STHeitiSC" size:20.00]];
     
+    JRTextView *imageName = (JRTextView *)[jsonview getView:@"imageName"];
+    [imageName setFont:[UIFont fontWithName:@"STHeitiSC" size:20.00]];
+
     imamgeView = (JRImageView *)[jsonview getView:@"BG_IMAGE"];
     JRButton *takePhotoBtn = (JRButton *)[jsonview getView:@"BTN_Take"];
     takePhotoBtn.didClikcButtonAction = ^(JRButton *senderr){
