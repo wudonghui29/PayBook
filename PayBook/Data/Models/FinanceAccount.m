@@ -11,6 +11,7 @@
 
 @implementation FinanceAccount
 
+@dynamic identification;
 @dynamic accountName;
 @dynamic amount;
 @dynamic bankAccountName;

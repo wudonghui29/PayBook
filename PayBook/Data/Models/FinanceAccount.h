@@ -12,6 +12,7 @@
 
 @interface FinanceAccount : NSManagedObject
 
+@property (nonatomic, retain) NSString * identification;
 @property (nonatomic, retain) NSString * accountName;
 @property (nonatomic, retain) NSNumber * amount;
 @property (nonatomic, retain) NSString * bankAccountName;

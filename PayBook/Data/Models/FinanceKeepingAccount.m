@@ -11,6 +11,7 @@
 
 @implementation FinanceKeepingAccount
 
+@dynamic identification;
 @dynamic account;
 @dynamic amount;
 @dynamic balance;
