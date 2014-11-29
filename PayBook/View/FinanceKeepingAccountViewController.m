@@ -48,8 +48,8 @@
     JRTextField *category = (JRTextField *)[jsonview getView:@"category"];
     [category setFont:[UIFont fontWithName:@"STHeitiSC" size:20.00]];
 
-    JRTextView *title_O = (JRTextView *)[jsonview getView:@"title_O"];
-    [title_O setFont:[UIFont fontWithName:@"STHeitiSC" size:20.00]];
+    JRTextView *imageName = (JRTextView *)[jsonview getView:@"imageName"];
+    [imageName setFont:[UIFont fontWithName:@"STHeitiSC" size:20.00]];
     imamgeView = (JRImageView *)[jsonview getView:@"BG_IMAGE"];
     JRButton *takePhotoBtn = (JRButton *)[jsonview getView:@"BTN_Take"];
     takePhotoBtn.didClikcButtonAction = ^(JRButton *senderr){

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6252" systemVersion="13F34" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="FinanceAccount" syncable="YES">
+    <entity name="FinanceAccount" representedClassName="FinanceAccount" syncable="YES">
         <attribute name="accountName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="amount" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="bankAccountName" optional="YES" attributeType="String" syncable="YES"/>
@@ -9,11 +9,17 @@
         <attribute name="branchOffice" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="currency" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="FinanceKeepingAccount" syncable="YES">
+    <entity name="FinanceKeepingAccount" representedClassName="FinanceKeepingAccount" syncable="YES">
+        <attribute name="account" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="amount" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="balance" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="createDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="imageName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="remark" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
         <element name="FinanceAccount" positionX="-63" positionY="-18" width="128" height="150"/>
-        <element name="FinanceKeepingAccount" positionX="-54" positionY="-18" width="128" height="28"/>
+        <element name="FinanceKeepingAccount" positionX="-54" positionY="-18" width="128" height="148"/>
     </elements>
 </model>

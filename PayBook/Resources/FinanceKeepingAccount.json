@@ -173,7 +173,7 @@
                 "NESTED_MIDDLE" : {
                     "JFrame": [0,240,750,700],
                     "BORDER_":19,
-                    "SORTEDKEYS": ["BG_PICTURE_IMAGE",  "BTN_Take","title_1","BG_IMAGE", "amount","title_O"],
+                    "SORTEDKEYS": ["BG_PICTURE_IMAGE",  "BTN_Take","title_1","BG_IMAGE", "amount","imageName"],
 
                     "COMPONENTS" : {
                         
@@ -197,13 +197,12 @@
                             }
                         },
                         
-                        "title_1":{
+                        "imageName":{
                             "JCom" : "JRTextField",
 
                             "JFrame": [230,20,320,80],
                             "JSubRender": {
                                 "JR_BORDERSTYLE" : 0,
-                                "BGCOLOR":-1
                             }
                         },
                         
@@ -220,26 +219,14 @@
                         
                         
                         "amount": {
-                            "JCom": "JRLocalizeLabel",
-                            "JFrame": [80,540,200,80],
+                            "JCom" : "JRLabelTextView",
+                            "JFrame": [80, 540,700,100],
+                            "BORDER": 11,
                             "JSubRender": {
-                                "RESERVE_CENTER": 1,
-                                "FONT_SIZE":50
+                                "frames":[[0,0,-1.1,100],[220,0,300,100]],
+                                "SubRenders":[{"FONT_SIZE":50},{"BORDER_": 9,}]
                             }
-                        },
-                        "title_O":{
-                            "JCom" : "JRTextField",
-                            "JFrame": [300,540,300,80],
-                            "JSubRender": {
-                                "JR_BORDERSTYLE" : 0,
-                                "BGCOLOR":-1
-                            }
-                        },
-
-
-
-
-                        
+                        }                        
                         
                         
                     }
@@ -247,28 +234,18 @@
                 
                 
                 "NESTED_DOWN" : {
-                    "JFrame": [0,900,768,400],
-                    "BORDER_": 25,
+                    "JFrame": [0,900,768,300],
+                    "BORDER_": 28,
                     "SORTEDKEYS": ["BG_REMARK_IMAGE"],
                     "COMPONENTS" : {
                         
                         "remark": {
-                            "JCom": "JRLocalizeLabel",
-                            "JFrame": [50,15,150,100],
-                            "BORDER_": 25,
+                            "JCom" : "JRLabelTextView",
+                            "JFrame": [30, 10,700,280],
+                            "BORDER": 11,
                             "JSubRender": {
-                                "RESERVE_CENTER": 1,
-                                "FONT_SIZE":50
-                            }
-                        },
-                        
-                        "remarkTextView":{
-                            "JCom":"JRTextView",
-                            "JFrame":[35,90,680,250],
-                            "BORDER_": 25,
-
-                            "JSubRender":{
-                                
+                                "frames":[[0,10,-1.1,-1.1],[1,70,680,200]],
+                                "SubRenders":[{"FONT_SIZE":50},{"BORDER_": 9,}]
                             }
                         },
 
@@ -276,7 +253,7 @@
                         
                         "BG_REMARK_IMAGE" : {
                             "JCom": "JRImageView",
-                            "JFrame": [30,90,-1.1,-1.1],
+                            "JFrame": [30,80,-1.1,-1.1],
                             "JSubRender":{
                                 "JR_IMG":"记账单_3.png"
                             }
