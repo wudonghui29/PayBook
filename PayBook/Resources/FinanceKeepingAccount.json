@@ -39,7 +39,7 @@
                 
                 "BTN_Save" : {
                     "JCom": "JRButton",
-                    "JFrame": [630,1.1,104,80],
+                    "JFrame": [630,10,104,80],
                     "JSubRender": {
                         "JR_FGN_IMG":"账户资料_03.png", "JR_FGIMG_Insets":[10, 20, 2 , 15], "JR_TITLE_Insets": [-5, 5, 0, 0]
                     }

@@ -49,16 +49,16 @@
                 
                 "BTN_Back" : {
                     "JCom": "JRButton",
-                    "JFrame": [23,1.1,104,80],
+                    "JFrame": [16,1.1,104,80],
                     "JSubRender": {
-                        "JR_FGN_IMG":"账户资料_02.png", "JR_FGIMG_Insets":[22, 12, 2 , 15], "JR_TITLE_Insets": [0, 5, 2, 10]
+                        "JR_FGN_IMG":"账户资料_02.png", "JR_FGIMG_Insets":[18, 12, 2 , 15], "JR_TITLE_Insets": [0, 5, 2, 10]
                     }
                 },
                 
                 
                 "BTN_Return" : {
                     "JCom": "JRButton",
-                    "JFrame": [630,1.1,104,80],
+                    "JFrame": [630,10,104,80],
                     "JSubRender": {
                         "JR_FGN_IMG":"账户资料_03.png", "JR_FGIMG_Insets":[10, 20, 2 , 15], "JR_TITLE_Insets": [-5, 5, 0, 0]
                     }
@@ -69,12 +69,12 @@
         "NESTED_BODY" : {
             "JFrame": [35,200,680,1050],
             "BORDER_": 25,
-
             "COMPONENTS" : {
                 
                 "NESTED_UP" : {
                     "JFrame": [5,5,680,1050],
                     "BORDER_": 28,
+                    "SORTEDKEYS":["BG_ACCOUNTTOTAL_IMAGE","BG_BANKORCREDIT_IMAGE"],
 
                     "COMPONENTS" : {
                         
@@ -90,6 +90,18 @@
                             }
                         },
                         
+                        
+                        "BG_ACCOUNTTOTAL_IMAGE" : {
+                            "JCom": "JRImageView",
+                            "BORDER": 25,
+
+                            "JFrame": [10,140,-1.1,-1.1],
+                            "JSubRender":{
+                                "JR_IMG": "账户资料1_09.png"
+                            }
+                        },
+                        
+
                         
                         "accountTotal": {
                             "JCom" : "JRLocalizeLabel",
@@ -121,6 +133,17 @@
                             }
                         },
                         
+                        
+                        "BG_BANKORCREDIT_IMAGE" : {
+                            "JCom": "JRImageView",
+                            "BORDER": 25,
+                            
+                            "JFrame": [10,480,-1.1,-1.1],
+                            "JSubRender":{
+                                "JR_IMG": "账户资料1_12.png"
+                            }
+                        },
+
                         
                         "bankOrCreditcar": {
                             "JCom" : "JRLocalizeLabel",

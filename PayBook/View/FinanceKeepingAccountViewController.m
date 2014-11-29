@@ -9,7 +9,7 @@
 #import "FinanceKeepingAccountViewController.h"
 #import "JRComponents.h"
 
-@interface FinanceKeepingAccountViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+@interface FinanceKeepingAccountViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIActionSheetDelegate>
 {
     JRImageView *imamgeView;
 }
@@ -20,8 +20,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    __block FinanceKeepingAccountViewController *blockSelf = self;
     NSDictionary* specification = [JsonFileManager getJsonFromFile:@"FinanceKeepingAccount.json"];
     JsonView* jsonview = (JsonView*)[JsonViewRenderHelper render:@"" specifications: specification];
     [self.view addSubview: jsonview];
@@ -50,18 +48,17 @@
 
     JRTextView *title_O = (JRTextView *)[jsonview getView:@"title_O"];
     [title_O setFont:[UIFont fontWithName:@"STHeitiSC" size:20.00]];
+    JRTextView *title_1 = (JRTextView *)[jsonview getView:@"title_1"];
+    [title_1 setFont:[UIFont fontWithName:@"STHeitiSC" size:20.00]];
+    
     imamgeView = (JRImageView *)[jsonview getView:@"BG_IMAGE"];
     JRButton *takePhotoBtn = (JRButton *)[jsonview getView:@"BTN_Take"];
     takePhotoBtn.didClikcButtonAction = ^(JRButton *senderr){
-        
-    [self didClickedBTN:senderr];
-        
-
-
+        [self didClickedBTN:senderr];
     };
     JRButton *saveBTN = (JRButton *)[jsonview getView:@"BTN_Save"];
     saveBTN.didClikcButtonAction = ^(JRButton *sender){
-//        NSLog(@"++++++");
+
     };
 
 
@@ -71,19 +68,64 @@
 - (void)didClickedBTN:(id)sender
 {
     
-   
+    NSString *takePhotoString = LOCALIZE_KEY(@"takePhoto");
+    NSString *photoLibString = LOCALIZE_KEY(@"photoLibrary");
+    NSString *cancleString = LOCALIZE_KEY(@"cancle");
+    NSString *selectString = LOCALIZE_KEY(@"select");
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:selectString delegate:self cancelButtonTitle:cancleString destructiveButtonTitle:photoLibString otherButtonTitles:takePhotoString, nil];
+    actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
+    [actionSheet showInView:self.view];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if(buttonIndex == 1)
+    {
+        if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+            [self takePhoto];
+        else{
+            [self photos];
+        }
+    }
+    else if(buttonIndex == 0)
+    {
+        [self photos];
+    }
+}
+- (void)takePhoto
+{
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    
+    UIImagePickerControllerSourceType type = UIImagePickerControllerSourceTypeCamera;
+    picker.sourceType = type;
+    [self presentViewController:picker animated:YES completion:nil];
+}
+- (void)photos
+{
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    UIImagePickerControllerSourceType type = UIImagePickerControllerSourceTypePhotoLibrary;
+
+    picker.sourceType = type;
+    [self presentViewController:picker animated:YES completion:nil];
+
+    
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo NS_DEPRECATED_IOS(2_0, 3_0)
 {
     imamgeView.image = [editingInfo objectForKey:@"UIImagePickerControllerOriginalImage"];
     [self dismissViewControllerAnimated:YES completion:nil];
-    
+    [self presentViewController:picker animated:YES completion:nil];
+
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
-    [picker dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 

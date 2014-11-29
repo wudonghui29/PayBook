@@ -74,7 +74,6 @@
     
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:rect];
     UIView *view1 = [[UIView alloc] initWithFrame: rect];
-    [ColorHelper setBorder: view1];
     imageView.image = image;
     [view1 addSubview:imageView];
     
