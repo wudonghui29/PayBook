@@ -8,7 +8,7 @@
         
         "BG_BOTTOM_IMAGE" : {
             "JCom": "JRImageView",
-            "BORDER":27,
+            "BORDER_":27,
             
             "JFrame": [0,0],
             "JSubRender":{
@@ -62,12 +62,12 @@
         "NESTED_REMARK" : {
         
             "JFrame": [0,105,760,1200],
-            "BORDER": 25,
+            "BORDER_": 25,
             "COMPONENTS" : {
                 
                 "NESTED_UP" : {
                     "JFrame": [0,0,760,210],
-                    "BORDER":25,
+                    "BORDER_":25,
                     "SORTEDKEYS": ["BG_DATE_IMAGE",  "BG_PAYDETAIL_IMAGE", "BG_LINE_IMAGE"],
                     "COMPONENTS" : {
                         
@@ -97,13 +97,13 @@
                             "BORDER_": 1,
                             "JSubRender": {
                                 "frames":[[60,10,-1.1,75], [230,0,500,95]],
-                                "SubRenders":[{"FONT_SIZE": 40},{"BORDER": 1}]
+                                "SubRenders":[{"FONT_SIZE": 40},{"BORDER_": 1}]
                             }
                         },
                         
                         "BG_PAYDETAIL_IMAGE":{
                             "JCom": "JRImageView",
-                            "BORDER": 25,
+                            "BORDER_": 25,
 
                             "JFrame": [0,95,-1.1,-1.1],
                             "JSubRender":{
@@ -219,9 +219,9 @@
                         
                         
                         "amount": {
-                            "JCom" : "JRLabelTextView",
+                            "JCom" : "JRLabelTextFieldView",
                             "JFrame": [80, 540,700,100],
-                            "BORDER": 11,
+                            "BORDER_": 11,
                             "JSubRender": {
                                 "frames":[[0,0,-1.1,100],[220,0,300,100]],
                                 "SubRenders":[{"FONT_SIZE":50},{"BORDER_": 9,}]
@@ -242,7 +242,7 @@
                         "remark": {
                             "JCom" : "JRLabelTextView",
                             "JFrame": [30, 10,700,280],
-                            "BORDER": 11,
+                            "BORDER_": 11,
                             "JSubRender": {
                                 "frames":[[0,10,-1.1,-1.1],[1,70,680,200]],
                                 "SubRenders":[{"FONT_SIZE":50},{"BORDER_": 9,}]

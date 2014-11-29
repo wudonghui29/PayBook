@@ -30,10 +30,11 @@
     labelTextField.textAlignment = NSTextAlignmentCenter;
     
     
-    JRTextView *remarkTextView =(JRTextView *) [jsonview getView:@"remarkTextView"];
+    JRTextView *remarkTextView =((JRLabelTextView *) [jsonview getView:@"remark"]).textView;
     [remarkTextView setFont:[UIFont fontWithName:@"STHeitiSC" size:30.00]];
 
-    
+    JRTextField *amountTextField = ((JRLabelTextFieldView *)[jsonview getView:@"amount"]).textField;
+    [amountTextField setFont:[UIFont fontWithName:@"STHeitiSC" size:20.00]];
     
     JRButton* backButton = (JRButton *)[jsonview getView:@"BTN_Back"];
     backButton.didClikcButtonAction = ^void(JRButton* btn) {
@@ -46,12 +47,12 @@
     JRTextField *category = (JRTextField *)[jsonview getView:@"category"];
     [category setFont:[UIFont fontWithName:@"STHeitiSC" size:20.00]];
 
-    JRTextView *title_O = (JRTextView *)[jsonview getView:@"title_O"];
+    JRTextField *title_O = (JRTextField *)[jsonview getView:@"title_O"];
     [title_O setFont:[UIFont fontWithName:@"STHeitiSC" size:20.00]];
-    JRTextView *title_1 = (JRTextView *)[jsonview getView:@"title_1"];
+    JRTextField *title_1 = (JRTextField *)[jsonview getView:@"title_1"];
     [title_1 setFont:[UIFont fontWithName:@"STHeitiSC" size:20.00]];
     
-    JRTextView *imageName = (JRTextView *)[jsonview getView:@"imageName"];
+    JRTextField *imageName = (JRTextField *)[jsonview getView:@"imageName"];
     [imageName setFont:[UIFont fontWithName:@"STHeitiSC" size:20.00]];
 
     imamgeView = (JRImageView *)[jsonview getView:@"BG_IMAGE"];
