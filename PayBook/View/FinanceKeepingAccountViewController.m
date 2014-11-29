@@ -56,13 +56,27 @@
     [imageName setFont:[UIFont fontWithName:@"STHeitiSC" size:20.00]];
 
     imamgeView = (JRImageView *)[jsonview getView:@"BG_IMAGE"];
+    __weak JRImageView* weakImageView = imamgeView;
     JRButton *takePhotoBtn = (JRButton *)[jsonview getView:@"BTN_Take"];
     takePhotoBtn.didClikcButtonAction = ^(JRButton *senderr){
         [self didClickedBTN:senderr];
     };
     JRButton *saveBTN = (JRButton *)[jsonview getView:@"BTN_Save"];
     saveBTN.didClikcButtonAction = ^(JRButton *sender){
-
+        UIImage* image = weakImageView.image;
+        NSData* imageData = UIImagePNGRepresentation(image);
+        
+        NSString* imageSavedDirectory = [[[FileManager documentsPath] stringByAppendingPathComponent:@"FinanceKeepingAccount"] stringByAppendingPathComponent:@"images"];
+        [FileManager createFolderWhileNotExist: imageSavedDirectory];
+        
+        NSDictionary* models = [jsonview getModel];
+        
+        [MODELS save: models entityName:@"FinanceKeepingAccount"];
+        
+        NSString* imageFileName = @"aa.png";
+        NSString* imageFilePath = [imageSavedDirectory stringByAppendingPathComponent:imageFileName];
+        
+        [FileManager writeDataToFile:imageFilePath data: imageData];
     };
 
 }
