@@ -12,7 +12,7 @@
     </entity>
     <entity name="FinanceKeepingAccount" representedClassName="FinanceKeepingAccount" syncable="YES">
         <attribute name="account" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="amount" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="amount" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="balance" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="createDate" optional="YES" attributeType="Date" syncable="YES"/>
@@ -22,6 +22,6 @@
     </entity>
     <elements>
         <element name="FinanceAccount" positionX="-63" positionY="-18" width="128" height="30"/>
-        <element name="FinanceKeepingAccount" positionX="-54" positionY="-18" width="128" height="30"/>
+        <element name="FinanceKeepingAccount" positionX="-54" positionY="-18" width="128" height="165"/>
     </elements>
 </model>

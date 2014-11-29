@@ -14,7 +14,7 @@
 
 @property (nonatomic, retain) NSString * identification;
 @property (nonatomic, retain) NSString * account;
-@property (nonatomic, retain) NSString * amount;
+@property (nonatomic, retain) NSNumber * amount;
 @property (nonatomic, retain) NSString * balance;
 @property (nonatomic, retain) NSString * category;
 @property (nonatomic, retain) NSDate * createDate;
