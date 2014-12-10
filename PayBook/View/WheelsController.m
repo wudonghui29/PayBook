@@ -20,7 +20,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     UISwipeGestureRecognizer *swipeGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(didSwipeRight:)];
     swipeGesture.direction = UISwipeGestureRecognizerDirectionRight;
     swipeGesture.delegate = (id <UIGestureRecognizerDelegate>)self;
@@ -47,6 +46,7 @@
 {
     if (self.wheelDidSwipRightBlock) {
         self.wheelDidSwipRightBlock(self, sender);
+         [self.navigationController popViewControllerAnimated:YES];
     } else {
     
         [self.navigationController popViewControllerAnimated:YES];
@@ -67,10 +67,15 @@
 
 - (UIView *)carousel:(Carousel *)carousel viewForItemAtIndex:(NSUInteger)index reusingView:(UIView *)view
 {
+    
     NSString *imageStr = [self.imageArray safeObjectAtIndex:index];
     UIImage* image = [UIImage imageNamed:imageStr];
     
-    CGRect rect = CanvasRect(0, 0, 600, 250);
+    
+//    CGRect rect = CanvasRect(0, 0, 600, 250);
+    
+    CGRect rect = CanvasRect(0, 0, 500, 300);
+
     
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:rect];
     UIView *view1 = [[UIView alloc] initWithFrame: rect];

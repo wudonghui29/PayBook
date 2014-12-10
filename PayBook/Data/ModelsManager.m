@@ -32,8 +32,9 @@
 {
     NSManagedObjectContext* context = DATA.manageObjectContext;
     
-    NSManagedObjectModel *managedObjectModel = [[context persistentStoreCoordinator] managedObjectModel];
-    NSEntityDescription *entity = [[managedObjectModel entitiesByName] objectForKey:entityName];
+//    NSManagedObjectModel *managedObjectModel = [[context persistentStoreCoordinator] managedObjectModel];
+//    NSEntityDescription *entity = [[managedObjectModel entitiesByName] objectForKey:entityName];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:entityName inManagedObjectContext:context];
     NSManagedObject *model = [[NSManagedObject alloc] initWithEntity:entity insertIntoManagedObjectContext:context];
 //    id model = [NSEntityDescription insertNewObjectForEntityForName:entityName inManagedObjectContext:context];
     

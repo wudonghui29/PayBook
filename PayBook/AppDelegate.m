@@ -105,7 +105,7 @@
             [CategoriesLocalizer setCurrentLanguage: _languageSelected];
 
             blockm.wheels = [NSArray arrayWithObjects:LOCALIZE_KEY(@"payment"),LOCALIZE_KEY(@"receiptMoney"),LOCALIZE_KEY(@"check"),LOCALIZE_KEY(@"analyze"),LOCALIZE_KEY(@"setting"), nil];
-            blockm.imageArray = [[NSArray arrayWithObjects:@"a.png",@"b.png",@"c.png",@"d.png",@"e.png", nil] mutableCopy];
+//            blockm.imageArray = [[NSArray arrayWithObjects:@"a.png",@"b.png",@"c.png",@"d.png",@"e.png", nil] mutableCopy];
             [blockm.carousel reloadData];
             [navController popToViewController:blockm animated:YES];
         };
